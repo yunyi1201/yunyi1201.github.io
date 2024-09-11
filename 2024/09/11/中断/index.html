@@ -27,7 +27,7 @@
 <meta property="og:description" content="中断是构成操作系统的一个非常重要的概念，它主要应用在调度、同步、驱动程序等操作系统的重要组成部分。本篇文章主要包括我本人在学习操作系统时对中断的理解。 中断究竟是什么？中断从概念上来讲，它的作用是打断当前执行流的执行，转而去执行一个预先设定的另一个执行流（称为中断处理程序）。那如果从计算机执行指令的方向去看的话，其实中断的行为其实只是改变了指令寄存器的值（在x86-64架构上为rip寄存器）。从程">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-09-11T02:35:18.000Z">
-<meta property="article:modified_time" content="2024-09-11T03:06:32.048Z">
+<meta property="article:modified_time" content="2024-09-11T13:33:46.745Z">
 <meta property="article:author" content="Yunyi">
 <meta property="article:tag" content="operating system">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          284 字
+          496 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          3 分钟
+          5 分钟
         
       </span>
     
@@ -278,6 +278,16 @@
                 
                 <p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E6%96%B7">中断</a>是构成操作系统的一个非常重要的概念，它主要应用在调度、同步、驱动程序等操作系统的重要组成部分。本篇文章主要包括我本人在学习操作系统时对中断的理解。</p>
 <h1 id="中断究竟是什么？"><a href="#中断究竟是什么？" class="headerlink" title="中断究竟是什么？"></a>中断究竟是什么？</h1><p>中断从概念上来讲，它的作用是打断当前执行流的执行，转而去执行一个预先设定的另一个执行流（称为中断处理程序）。那如果从计算机执行指令的方向去看的话，其实中断的行为其实只是改变了指令寄存器的值（在x86-64架构上为<code>rip</code>寄存器）。从程序的执行方面去看的话，因为程序的执行其实是一连续的函数调用，而函数调用在底层的机器语言上是一条<code>call</code>指令，<code>call</code>指令在行为上其实是做了一个压栈操作和改变<code>rip</code>寄存器值的组合。那也是说从指令执行的层面，中断其实在行为上是和函数调用非常类似的。</p>
+<p>TODO：添加关于中断和函数调用的图示</p>
+<h1 id="中断和函数调用的区别"><a href="#中断和函数调用的区别" class="headerlink" title="中断和函数调用的区别"></a>中断和函数调用的区别</h1><p>中断和函数调用的主要区别在与执行流的可预测性，对于函数调用而言，当内层函数返回时，我们一定知道它会返回到上层函数。对于中断而言，当中断返回时，并不确定一定会返回到被中断的函数（可能在内核中经历了一次<code>schedule</code>）。另外一个比较重要的区别是，在发生中断时，由<code>CPU</code>进行了一次切换栈的操作，也就是中断处理程序是在另外一个栈运行的。这也衍生出了一些问题？</p>
+<ul>
+<li>为什么需要切换栈？</li>
+</ul>
+<p>TODO</p>
+<ul>
+<li>由CPU切换的栈是属于‘谁’的？CPU怎么知道切换到这个指定的栈？</li>
+</ul>
+<p>TODO</p>
 
                 
               </div>
