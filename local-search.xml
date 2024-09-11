@@ -4,13 +4,19 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2024/09/10/hello-world/"/>
-    <url>/2024/09/10/hello-world/</url>
+    <title>中断</title>
+    <link href="/2024/09/11/%E4%B8%AD%E6%96%AD/"/>
+    <url>/2024/09/11/%E4%B8%AD%E6%96%AD/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>中断(<a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E6%96%B7)%E6%98%AF%E6%9E%84%E6%88%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%80%E4%B8%AA%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%8C%E5%AE%83%E4%B8%BB%E8%A6%81%E5%BA%94%E7%94%A8%E5%9C%A8%E8%B0%83%E5%BA%A6%E3%80%81%E5%90%8C%E6%AD%A5%E3%80%81%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F%E7%AD%89%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%87%8D%E8%A6%81%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%E3%80%82%E6%9C%AC%E7%AF%87%E6%96%87%E7%AB%A0%E4%B8%BB%E8%A6%81%E5%8C%85%E6%8B%AC%E6%88%91%E6%9C%AC%E4%BA%BA%E5%9C%A8%E5%AD%A6%E4%B9%A0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%AF%B9%E4%B8%AD%E6%96%AD%E7%9A%84%E7%90%86%E8%A7%A3%E3%80%82">https://zh.wikipedia.org/wiki/%E4%B8%AD%E6%96%B7)是构成操作系统的一个非常重要的概念，它主要应用在调度、同步、驱动程序等操作系统的重要组成部分。本篇文章主要包括我本人在学习操作系统时对中断的理解。</a></p><h1 id="中断究竟是什么？"><a href="#中断究竟是什么？" class="headerlink" title="中断究竟是什么？"></a>中断究竟是什么？</h1><p>中断从概念上来讲，它的作用是打断当前执行流的执行，转而去执行一个预先设定的另一个执行流（称为中断处理程序）。那如果从计算机执行指令的方向去看的话，其实中断的行为其实只是改变了指令寄存器的值（在x86-64架构上为<code>rip</code>寄存器）。从程序的执行方面去看的话，因为程序的执行其实是一连续的函数调用，而函数调用在底层的机器语言上是一条<code>call</code>指令，<code>call</code>指令在行为上其实是做了一个压栈操作和改变<code>rip</code>寄存器值的组合。那也是说从指令执行的层面，中断其实在行为上是和函数调用非常类似的。</p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>operating system</tag>
+      
+    </tags>
     
   </entry>
   
